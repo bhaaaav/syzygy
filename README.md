@@ -17,6 +17,7 @@ a simple bootloader - x86
 # boot.asm
 This is the crux of the bootloader, temproarily just renders to qemu display 
 >nasm -f bin ./boot.asm -o ./boot.bin
+
 >ndisasm ./boot.bin
 
 bin file created, to contents displayed. A bin file has no headers, its just the raw code outputed. The process has no understanding of executables, file systems, file formats etc;
