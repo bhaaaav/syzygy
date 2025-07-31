@@ -20,6 +20,6 @@ This is the crux of the bootloader, temproarily just renders to qemu display
 >
 >ndisasm ./boot.bin
 
-bin file created, to contents displayed. A bin file has no headers, its just the raw code outputed. The process has no understanding of executables, file systems, file formats etc;
+bin file created,and contents displayed. A bin file has no headers, its just the raw code outputed. Bin file is used because the process has no understanding of executables, file systems, file formats etc;
 To emulate:
 >qemu-system-x86_64 -hda ./boot.bin
