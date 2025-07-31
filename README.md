@@ -11,4 +11,4 @@ a simple bootloader - x86
 3. Installing Emulator Qemu
    this is chosen as it has incredible debug options for fututre os development
    >  sudo apt install qemu-system-x86 && qemu-system-x86_64
-   
+   the emulator will render a virtual machine but will be unable to do anything yet as no virtual hard disks are attached 
