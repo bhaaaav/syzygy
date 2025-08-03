@@ -1,8 +1,27 @@
-ORG 0x7c00
+ORG 0
+
+; originally we set org 0x7c0 and not 0, but its imp to set org 0 bec
+; if processor sets dds tp 0x7c0 and org- 0x7c0
+;then bios will load into [0x7c0 *16 +0x7c00] instead of 0x7c00
 
 BITS 16
 
+jmp 0x7c0:start
+
 start: 
+    cli ; clear interrupts 
+
+    ; this is done to take conrtol of the segment registers and not boot into faulty memory block
+
+    mov ax, 0x7x0
+    mov ds, ax
+    mov es, ax
+    mov ax, 0x00
+    mov ss, ax
+    mov sp, 0x7c00
+
+    sti ; enables interrupts
+
     mov si, message 
     call print
     jmp $
