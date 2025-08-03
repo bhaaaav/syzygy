@@ -13,7 +13,7 @@ start:
 
     ; this is done to take conrtol of the segment registers and not boot into faulty memory block
 
-    mov ax, 0x7x0
+    mov ax, 0x7c0
     mov ds, ax
     mov es, ax
     mov ax, 0x00
@@ -44,9 +44,8 @@ print_char:
     int 0x10
     ret
 
-messgae: 
+message: 
     db 'hello world!' , 0
 
-times 510 ($-$$) db 0
+times 510 - ($-$$) db 0
 dw 0xAA55
-
