@@ -23,3 +23,15 @@ This is the crux of the bootloader, temproarily just renders to qemu display
 bin file created,and contents displayed. A bin file has no headers, its just the raw code outputed. Bin file is used because the process has no understanding of executables, file systems, file formats etc;
 To emulate:
 >qemu-system-x86_64 -hda ./boot.bin
+
+# Writing boot sector into usb stick
+> sudo fdisk -l
+
+this lists all the disks running on the system, in my case the usb is /dev/sdc.
+Make sure the usb doesnt contain data as it will be overwritten.
+
+> sudo dd if=./boot.bin of=/dev/sdc
+
+copy the bootloader to the usb stick using this cmd. this overwrites the first 512 bytes of out boot sector in usb. if-input file path, of-output file path 
+
+save and load into uefi, and boot from usb stick youll see the current boot program running 
