@@ -35,3 +35,5 @@ Make sure the usb doesnt contain data as it will be overwritten.
 copy the bootloader to the usb stick using this cmd. this overwrites the first 512 bytes of out boot sector in usb. if-input file path, of-output file path 
 
 save and load into uefi, and boot from usb stick youll see the current boot program running 
+
+<mine hasnt worked yet so finding a workaround, will keep updating>
