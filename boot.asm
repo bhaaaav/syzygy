@@ -5,10 +5,18 @@ ORG 0
 ;then bios will load into [0x7c0 *16 +0x7c00] instead of 0x7c00
 
 BITS 16
+_start:
+    jmp short start
+    nop
 
-jmp 0x7c0:start
+times 33 db 0
 
-start: 
+start:
+    jmp 0x7c0:step2
+
+
+
+step2: 
     cli ; clear interrupts 
 
     ; this is done to take conrtol of the segment registers and not boot into faulty memory block
